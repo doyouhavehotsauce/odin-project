@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <li class="list-el"></li>
+    <li class="list-el"></li>
+    <li class="list-el"></li>
+</body>
+<script>
+    //get array from dom
+    let domArr = [1,2,3];
+
+    const logoArr = ['rocket', 'boat', 'gears', 'pencils'];
+    //this represents the length of the array
+    
+
+
+
+    //create a function to put icons into dom 
+    //based on number found in array
+    let featureTest = function(){
+        //let the length of the array found in dom
+        x = domArr.length;
+        //that number is the amount of times to iterate over the logo array
+        for(let i = 0; i < x; i++){
+            //each iteration I put that round number of coresponding logoArr index into the dom
+            console.log(`I am on round ${i} and the logo is ${logoArr[i]}`)
+        }
+
+    };
+
+
+let calcWindowSize = function(){
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+
+        console.log(`w = ${width}; h = ${height}`);
+    }
+
+
+window.onload = (featureTest, calcWindowSize) => {
+  console.log('page is fully loaded');
+};
+</script>
+</html>

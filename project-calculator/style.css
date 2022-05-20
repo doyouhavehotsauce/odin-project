@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Nunito:wght@400;500&display=swap');
+/* 
+font-family: 'Fira Code', monospace;
+font-family: 'Nunito', sans-serif; 
+*/
+*{
+    box-sizing: border-box;
+    color: #ccc;
+    font-family: 'Nunito', sans-serif;
+    padding: 0;
+    margin: 0;
+    --black: #142B40;
+}
+    /* Color Theme Swatches in Hex */
+/* .Motherboard-Mono-1-hex { color: #025DB0; }
+.Motherboard-Mono-2-hex { color: #4FABFF; }
+.Motherboard-Mono-3-hex { color: #0287FF; }
+.Motherboard-Mono-4-hex { color: #28567F; }
+.Motherboard-Mono-5-hex { color: #026CCC; } */
+
+
+#calculator{
+    border: 1px solid var(--black);
+    width: 275px;
+    margin: 0 auto;
+}
+#case{
+    border: 3px solid #142B40;
+    border-radius: 4px;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 300px;
+
+}
+#display{
+    background: #18344D;
+    border: 1px solid var(--black);
+    font-size: 1.75em;
+    padding: 20px 5px;
+    text-align: right;
+}
+.row{
+    display:flex;
+    text-align: center;
+}
+.btn{
+    align-self: center;
+    background: #6AB9D9;
+    border: 1px solid var(--black);
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 15px;
+    text-align: center;
+    width: 75px;
+}
+.num{
+    background: #026CCC;
+}
+.operator{
+    background: #025DB0;
+}
+.num:hover{
+    background: #3F8ACC;
+}
+.num:active{
+    background: #5494CC;
+}
+.operator:hover{
+    background: #1B5080;
+}
+.operator:active{
+    background: #18344D;
+}

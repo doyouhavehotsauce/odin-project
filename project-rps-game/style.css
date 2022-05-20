@@ -1,0 +1,93 @@
+*{
+    --font-color: #46444A;
+    --white: #fff;
+    --blue: #049DBF;
+    --red: #F24405;
+    --border-radius: 8px;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    background: #46444A;
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    color: var(--font-color);
+}
+#status-block{
+    text-align: left;
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+    margin: 35px 0;
+}
+#status-block p:first-child{
+    text-align: left;
+    padding: 10px;
+    font-size: 22px;
+    color: var(--white);
+    background: var(--blue);
+    margin-top: 0;
+}
+#game-status{
+    text-align: center;
+    font-size: 22px;
+    height: 30px;
+}
+.wrap{
+    width: 100%;
+    max-width: 600px;
+    background: #f3f3f3;
+    border-radius: var(--border-radius);
+    margin: 150px auto 0 auto;
+    padding: 30px;
+    height: 500px;
+}
+.scoreboard{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.scoreboard div{
+    border: 3px solid var(--blue);
+    border-radius: var(--border-radius);
+    text-align: center;
+    width: 150px;
+    height: 150px;
+}
+.scoreboard div p:first-child{
+    background: var(--blue);
+    color: var(--white);
+    margin-top: 0;
+    padding: 10px 0;
+    font-size: 18px;
+}
+.scoreboard div p:last-child{
+    font-size: 32px
+}
+.scoreboard div:last-of-type{
+    margin-left: 30px;
+}
+.btn-container{
+    margin:
+}
+button{
+    padding: 10px;
+    width: 150px;
+    border-style: initial;
+    border: 2px solid var(--red);
+    border-radius: var(--border-radius);
+    background: var(--red);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3ms ease-in-out;
+}
+button:hover{
+    background: var(--white);
+    color: var(--red)
+}
+.game-btn:nth-child(2){
+    margin-left: 10px;
+    margin-right: 10px;
+}
