@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper{
+        max-width: 500px;
+    }
+</style>
+<body>
+    <div class="wrapper">
+    <h1>Nice form you got there</h1>
+    <form action="">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" required><br><br>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" required><br><br>
+        <label for="email">email</label>
+        <input type="email" id="email" required><br><br>
+        <label for="userName">user name</label>
+        <input type="text" id="userName" required minlength="5">
+        <hr>
+        <p>Can you tell us a little bit about yourself?</p>
+        <fieldset>
+            <legend>Pick your favorite fruit</legend>
+            <input type="radio" name="feedback" id="">
+            <label for="">apples</label>
+            <input type="radio" name="feedback" id="">
+            <label for="">oranges</label>
+
+            <input type="radio" name="feedback" id="">
+            <label for="">kiwis</label>
+
+        </fieldset>
+        <button type="submit">submit</button>
+    </form>
+</div>
+</body>
+</html>
