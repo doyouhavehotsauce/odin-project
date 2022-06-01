@@ -1,0 +1,8 @@
+@font-face{
+    font-family: Norse-bold;
+    src: url('./assets/Norse-bold.otf'), url('./assets/Norse-bold.otf') format('otf');
+}
+body{
+    /* font-family: 'Norse-bold'; */
+}
+
