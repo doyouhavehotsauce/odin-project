@@ -7,10 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./assets/Norse-Bold.otf">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet"></head>
 <body>
     <div class="wrapper">
         <div class="hero">
@@ -28,26 +27,29 @@
             </section>
             <form action="post">
                 <p>Let's do this!</p>
-                <span>
+                <span class="col">
                     <label for="first-name">first name</label>
-                    <input type="text" name="first-name">
-
+                    <input type="text" name="first-name" required>
+                </span>
+                <span class="col">
                     <label for="last-name">last name</label>
                     <input type="text" name="last-name">
                 </span>
-                <span>
+                <span class="col">
                     <label for="email">email</label>
-                    <input type="email" name="email">
-
-                    <label for="phone">phone number</label>
-                    <input type="number" name="phone">
+                    <input type="email" name="email" required>
                 </span>
-                <span>
+                <span class="col">
+                    <label for="phone">phone number</label>
+                    <input type="tel" name="phone" required>
+                </span>
+                <span class="col">
                     <label for="first-pw">password</label>
-                    <input type="password" name="first-pw">
-
+                    <input type="password" name="first-pw" minlength="7" required>
+                </span>
+                <span class="col">
                     <label for="confirm-pw">confirm password</label>
-                    <input type="password" name="confirm-pw">
+                    <input type="password" name="confirm-pw" required >
                 </span>
             </form>
             <section>
