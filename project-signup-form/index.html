@@ -45,19 +45,23 @@
                 </span>
                 <span class="col">
                     <label for="first-pw">password</label>
-                    <input type="password" name="first-pw" minlength="7" required>
+                    <input id="pwInput" type="password" name="first-pw" minlength="8" required>
                 </span>
                 <span class="col">
                     <label for="confirm-pw">confirm password</label>
-                    <input type="password" name="confirm-pw" required >
+                    <input id="pwConf" type="password" name="confirm-pw" required >
+                    <span></span>
                 </span>
             </form>
             <section>
-                <button type="submit">Create Account</button>
+                <button type="submit" onclick="validateForm()">Create Account</button>
                 <p>Already have an account? <a href="#">Log in</a></p>
             </section>
+
 
         </div>
 </div>
 </body>
+<script src="./script.js"></script>
+
 </html>

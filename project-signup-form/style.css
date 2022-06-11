@@ -51,13 +51,17 @@ a{
 a:after{
     display: block;
     content: '';
-    width: 70px;
+    width: 0px;
     height: 2px;
     box-shadow: 5px 10px #888888;
     position: absolute;
     transition: all 0.5s ease-in-out;
-    right: 0;
+    left: -8px;
     top: 16px;
+    transition: width 0.25s ease-in-out;
+}
+a:hover:after{
+    width: 70px;
 }
 
 .wrapper{
@@ -132,4 +136,19 @@ input:focus{
 /* form Grid */
 form{
     display: grid;
+}
+
+.error{
+    border-color: red;
+}
+input.error + span:after{
+    content: '*Passwords must match';
+    color: red;
+    font-size: 12px;
+}
+.success{
+    border-color: #50C878;
+}
+input.success + span:after{
+    content: '';
 }
