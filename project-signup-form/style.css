@@ -138,7 +138,8 @@ form{
     display: grid;
 }
 
-.error{
+.error,
+.error:focus{
     border-color: red;
 }
 input.error + span:after{
