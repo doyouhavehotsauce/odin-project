@@ -5,55 +5,261 @@
     font-family: 'Poppins', sans-serif;
     padding: 0;
     margin: 0;
-    --blue: dodgerblue;
+    --blue: #178bbf;
     --white: #fcfcfc;
+    --black: #333;
+    --light-grey: #616161;
 }
+h1{
+    font-size: 1.75rem
+}
+p{
+    color: var(--light-grey);
+    font-size: 0.8rem;
+}
+input[type="search"]{
+    max-width: 450px;
+}
+.profile-pic-placeholder{
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    height: 40px;
+    background: purple;
+}
+
+
 .sidenav{
     background: var(--blue);
     color: var(--white);
     display: flex;
     flex-direction: column;
+    padding: 2rem 0.5rem
 }
 .sidenav .logo,
 .sidenav .links,
 .sidenav .utilities{
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 .sidenav .links img,
 .sidenav .utilities img{
-    border: 1px solid var(--white);
-    width: 50px;
-    height: 50px;
+    width: 1.5rem;
+    margin-right: 1rem;
 }
 .logo{
     margin: 1rem;
 }
+.logo img{
+    margin-right: 1rem;
+    margin-top: -0.5rem;
+}
 .links,
 .utilities{
     margin: 1rem 2rem;
+    cursor: pointer;
 }
+
+
+/* Top nav section */
+
 .search-bar > img{
     display: inline-block;
-    width: 30%;
 }
 .search-bar > input{
     display: inline-block;
     width: 60%;
 }
-
-.search-wrap{
-    text-align: right;
+.profile h3{
+    display: none;
 }
+
+
 
 
 .dashboard{
-    background: #c3c3c3;
-    padding: 10px;
+    background: #e2e8f0;
+    display: flex;
+    flex-direction: column;
 }
+
+
+
+.announcement-articles{
+    background: var(--white);
+    border-radius: 4px;
+    margin: 0.75rem 0 1.75rem 0px;
+    padding: 1.5rem;
+}
+.announcement-articles p{
+    margin-bottom: 1rem;
+}
+/* Project Card Styline */
 .card-wrap{
-    border-left: 3px solid goldenrod;
+    border-left: 6px solid gold;
     border-radius: 4px;
     background: var(--white);
-    margin-bottom: 10px;
+}
+
+.card{
+    padding: 1rem;
+}
+.social{
+    text-align: right;
+    align-self: end;
+}
+.social img{
+    width: 1.5rem;
+    margin-left: 2rem;
+}
+
+
+
+/* Buttons */
+.button-wrap{
+    padding: 1.5rem 0;
+}
+.button-wrap buttons{
+    background: var(--blue);
+    border: 2px solid var(--blue);
+    color: var(--white);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: block;
+    text-align: center;
+    border-radius: 25px;
+    width: 90%;
+    margin: 0 auto;
+    transition: all 0.25ms ease-in-out;
+}
+.button-wrap buttons:hover{
+    background: var(--white);
+    color: var(--blue);
+}
+.button-wrap buttons:nth-child(2){
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+
+
+
+/* Announcements Componenet */
+
+.announcement-articles a{
+    border-bottom: 1px solid grey;
+    display: block;
+    text-decoration: none;
+    color: var(--black);
+}
+.announcement-articles a:last-of-type{
+    border-bottom: none;
+}
+
+
+
+/* Trending Componant */
+.trending{
+    background: var(--white);
+    border-radius: 4px;
+    margin-top: 0.75rem;
+    padding: 10px;
+}
+.trending-contacts{
+    display: flex;
+}
+
+
+@media all and (min-width: 975px){
+    body{
+        display: grid;
+        grid-template-columns: 23vw auto;
+    }
+    .dashboard{
+        display: grid;
+        grid-template-columns: auto 20vw;
+    }
+    .sidebar{
+        padding: 0.75rem 0.75rem 0.75rem 0;
+    }
+    .wrapper{
+
+    }
+    .utilities-output{
+        margin-top: 2rem;
+    }
+    .top-section{
+        box-shadow: 5px 10px 8px #888888;
+        display: block;
+        /* z-index: 0; */
+        position: relative;
+    }
+
+    .profile-info div:first-child{
+        display: flex;
+    }
+    .search-wrap{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .search-bar{
+        display: flex;
+        align-items: center;
+    }
+    .search-bar img{
+        width: 25px;
+    }
+    .profile img:first-of-type{
+        width: 25px;
+    }
+
+    .project-wrap{
+        display: grid;
+        grid-template-columns: repeat( 2, 1fr);
+        grid-template-rows: auto;
+        gap: 0.75rem;
+        padding: 0.75rem;
+    }
+    .project-wrap > h3{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+
+
+
+    .card{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 50px;
+    }
+
+
+
+
+
+
+
+    .profile h3{
+        display: initial;
+    }
+    .profile-info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+
+
+    .button-wrap{
+        padding: 1.5rem;
+        text-align: right;
+    }
+    .button-wrap buttons{
+        display: inline-block;
+        width: 115px;
+    }
 }

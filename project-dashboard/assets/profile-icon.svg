@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Group 23</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Tablet-Portrait" transform="translate(-797.000000, -326.000000)">
+            <g id="Group-23" transform="translate(797.000000, 326.000000)">
+                <circle id="Oval" stroke="#068BBF" stroke-width="3" fill="#FFFFFF" cx="25" cy="25" r="23.5"></circle>
+                <g id="Group-Copy-4" transform="translate(8.000000, 8.000000)" fill="#068BBF" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="2">
+                    <g id="Group-3-Copy">
+                        <g id="Group-2">
+                            <path d="M16.9988514,19.2941176 C10.9795635,19.2678062 5.21457816,23.7227312 3.90526916,24.9326011 C0.0915792125,28.45665 -0.394613643,35.0319045 0.225066814,38.5203159 C1.26698262,38.9712304 2.77213069,39.4031516 4.57638749,39.7802695 C7.99718743,40.4952703 12.4674401,41 16.9388973,41 C21.551096,41 26.1933781,40.5148745 29.6852548,39.7899493 C31.4221303,39.4293679 32.8658612,39.0141771 33.8588665,38.5642693 C34.0813259,38.4634781 34.2692723,38.35509 34.497632,38.11351 C34.4532459,35.4300865 34.0207114,28.8079373 29.8666268,24.9276175 C28.6070384,23.751039 22.6706289,19.3191377 16.9988514,19.2941176 Z" id="Rectangle"></path>
+                            <ellipse id="Oval" cx="16.8965517" cy="12.6617647" rx="12.0689655" ry="12.6617647"></ellipse>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
