@@ -1,0 +1,26 @@
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+article,
+table{
+
+    border: 1px solid #c3c3c3;
+    border-radius: 4px;
+}
+article{
+    padding: 0 1rem 1rem;
+}
+table{
+    padding: 1rem;
+}
+
+.wrap{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
