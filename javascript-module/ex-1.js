@@ -46,10 +46,6 @@ const dog2 = new makeDogs('Walter', 'pommerainiananan', false);
 
 console.log(`my name is ${dog.name} and my friend is ${dog2.name}. it is ${dog2.isGoodBoy} that he is a good boy`)
 
-
-
-
-
 function whosAGoodBoy(dog){
     return (dog.isGoodBoy ? 'yes he is' : 'nope')
 }
@@ -57,11 +53,7 @@ function whosAGoodBoy(dog){
 whosAGoodBoy(dog2)
 whosAGoodBoy(dog)
 
-
-
-
-
-
+//-------------------------------------------//
 
 function Player(name, marker) {
     this.name = name
@@ -75,3 +67,81 @@ function Player(name, marker) {
   const player2 = new Player('also steve', 'O')
   player1.sayName() // logs 'steve'
   player2.sayName() // logs 'also steve'
+
+
+
+
+//-------------------------------------------//
+let garage = [
+]
+
+
+
+function Car(brand, model, year, color){
+this.brand = brand;
+this.model = model;
+this.year = year;
+this.color = color;
+this.horn = function(){
+    console.log('beep beep mother fucker')
+}
+this.addToGarage = function(){
+    garage.push(this);
+};
+
+this.addToGarage();
+
+}
+
+const car1 = new Car('buick', 'station wagon', 1983, 'wood')
+const car2 = new Car('volkswagon', 'beetle', 1996, 'orange')
+const car3 = new Car('honda', 'civic', 2020, 'blue')
+const car4 = new Car('dodge', 'durango', 1999, 'black')
+const car5 = new Car('audi', 's7', 1999, 'silver')
+
+
+
+function showCars(garage){
+    garage.forEach(car => {
+    //print this data to page
+    // '<article>'+
+    //     `<h3>${car[1]}</h3>`+
+    //     `<p>model: ${car[2]} year: ${car[3]} color: ${car[4]}</p>`+
+    // `</article>`
+    console.log(`make: ${car.brand} - model: ${car.model} - year: ${car.year} - color: ${car.color}`)
+    });
+}
+
+
+let sandwich = function() {
+    console.log(this.topping);
+    console.log(this.spread)
+}
+let dagwood = {
+    topping: 'olives'
+}
+dagwood.nameIt = sandwich.bind(dagwood);
+let menu = dagwood.nameIt
+
+let schmeer = {
+    spread: 'mayo'
+}
+
+dagwood.bread = sandwich.bind(schmeer)
+
+menu()
+sandwich()
+
+
+
+let talk = function (){
+    console.log(this.sound)
+}
+let boromir = {
+    sound: 'blerg'
+}
+boromir.speak = talk.bind(boromir)
+let blabber = boromir.speak
+
+blabber()
+talk()
