@@ -8,35 +8,50 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h3>My Library</h3>
-    <div>
-        <button>Add a Book</button>
+    <div class="add-book-wrap hide">
+        <table>
+            <tr>
+                <td><h3>Book Details</h3></td>
+            </tr>
+            <tr>
+                <td>
+                    <form action="">
+                        <fieldset class="field">
+                            <label for="title" class="field-label">Title</label>
+                            <input type="text" name="title" id="title" required class="field-input">                           
+                        </fieldset>
+                        <fieldset class="field">
+                            <label for="author" class="field-label">Author</label>
+                            <input type="text" name="author" id="author" required class="field-input">          
+                        </fieldset>
+                        <fieldset class="radio-field">
+                            <label for="read-status" class="radio-label">Have you read it?</label>
+                            <div>
+                                <input type="radio" name="read-status" id="read"> 
+                                <label for="read">Yes</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="read-status" id="read"> 
+                                <label for="read">No</label>
+                            </div>                     
+                        </fieldset>
+                        <button id="bookSubmit">Submit</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
     </div>
-    <table>
-        <tr>
-            <td>Add a book</td>
-        </tr>
-        <tr>
-            <td>
-                <form action="">
-                    <label for="">Title</label><br>
-                    <input type="text">
-                    <br><br>
-                    <label for="">Author</label><br>
-                    <input type="text">
-                    <br><br>
-                    <label for="">Have you read it?</label>
-                    <input type="checkbox">
-                    <br><br>
-                    <button>Submit</button>
-                </form>
-            </td>
-        </tr>
-    </table>
+    <h1>My Library</h1>
+    <div>
+        <button type="button" id="add-book">Add a Book</button>
+    </div>
+    
+    
     <div id="wrap" >
     </div>
-
     
+    
+    
+    <script src="./script.js"></script>
 </body>
-<script src="./script.js"></script>
 </html>
