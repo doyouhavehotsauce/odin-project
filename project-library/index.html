@@ -18,22 +18,13 @@
                     <form action="">
                         <fieldset class="field">
                             <label for="title" class="field-label">Title</label>
-                            <input type="text" name="title" id="title" required class="field-input">                           
+                            <input type="text" name="title" id="title" class="field-input" required>   
+                            <span id="title-error"></span>                        
                         </fieldset>
                         <fieldset class="field">
                             <label for="author" class="field-label">Author</label>
-                            <input type="text" name="author" id="author" required class="field-input">          
-                        </fieldset>
-                        <fieldset class="radio-field">
-                            <label for="read-status" class="radio-label">Have you read it?</label>
-                            <div>
-                                <input type="radio" name="read-status" id="read"> 
-                                <label for="read">Yes</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="read-status" id="read"> 
-                                <label for="read">No</label>
-                            </div>                     
+                            <input type="text" name="author" id="author" class="field-input" required>
+                            <span id="author-error"></span>             
                         </fieldset>
                         <button id="bookSubmit">Submit</button>
                     </form>
@@ -41,14 +32,24 @@
             </tr>
         </table>
     </div>
-    <h1>My Library</h1>
-    <div>
-        <button type="button" id="add-book">Add a Book</button>
+    <div class="wrapper">
+        <h1>My Library</h1>
+        <div>
+            <button type="button" id="add-book">Add a Book</button>
+        </div>
+        
+        
+        <div id="wrap" >
+            <article class="card">
+            <h3>Rob's Adventure</h3>
+            <p>author: Steve Sampson </p>
+            <p>completed: <input type="checkbox">&nbsp;<span>No</span></p>
+            <button class="deleteBook">delete</button>
+            </p>
+            </article>
+        </div>
     </div>
-    
-    
-    <div id="wrap" >
-    </div>
+
     
     
     

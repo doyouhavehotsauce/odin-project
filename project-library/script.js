@@ -1,27 +1,30 @@
+//PUNCH LIST
+//ensure aria compliance on form & cards
+
+//add form validation
+
+//add toggleable feature to read/unread
+
+//if user deletes a book remove it from the array
+    //add confirmation step feature
+
+
+
+
+
 window.onload = function(){
 
-    let library = [];
+    let library = [
+        {title: "Rob's Adventure", author: 'Steve Sampson'}
+    ];
     let btn = document.getElementById('bookSubmit');
     let cardContainer = document.getElementById('wrap');
     let addBookBtn = document.getElementById('add-book');
     let grabWrap = document.querySelector('div.add-book-wrap');
 
-    let selectedCard
 
 
-    //done - get the values of the user input when submit click
-    //create Add book button - on click form modal appears
-    //ensure aria compliance on form & cards
-    //done - create a book object from that data
-    //done - store the book object in an array
-    //done - print the array of books to the page
-        //add toggleable feature to read/unread
-
-    //if user deletes a book remove it from the array
-        //add confirmation step feature
     
-    //done - if user adds an book add to page without refreshing page
-
 
 
 //creates book object
@@ -32,6 +35,7 @@ window.onload = function(){
         this.addToLibrary = function(){
             library.push(this);
         };
+
 
         this.addToLibrary();
         
@@ -46,39 +50,74 @@ window.onload = function(){
 
 //puts cards on page
     function showBooks(){
+        let i = 0;
         for(book of library) {
             document.getElementById('wrap').innerHTML
-            += '<article class="card">'+
+            += `<article class="card" data-id="card${i}">`+
             `<h3>${book.title}</h3>`+
-            `<p>author: ${book.author} <br>`+
-            `completed: <span class="deleteBook">delete</span>`+
+            `<p>author: ${book.author} </p>`+
+            `<p>completed: <input type="checkbox">&nbsp;<span>No</span></p>`+
+            `<button class="deleteBook">delete</button>`+
             `</p>`+
             `</article>`;
+
+            i++
         }
+        
     }
    
 
 
     //Event Listners
-    btn.addEventListener('click', btnHeard);
-    function btnHeard(e){
-        e.preventDefault();
+    btn.addEventListener('click', (e) => {
 
-        let title = document.getElementById('title').value;
-        let author = document.getElementById('author').value;
-        //let readStatus = document.getElementById('read').value
 
-        let makeNewBook = new Book(title, author);
+        let title = document.getElementById('title');
+        let author = document.getElementById('author');
+        let titleError = document.querySelector('#title-error')
+        let authorError = document.querySelector('#author-error')
+        
+        title.classList.remove('input-error')
+        author.classList.remove('input-error')
+        titleError.innerHTML = ''
+        authorError.innerHTML = ''
 
-        return makeNewBook
 
-       }
+        if(title.value == '' || title.value == null && author.value == '' || author.value == null){
+            console.log('full check ran')
 
-    cardContainer.addEventListener('click', e => {
-        if(e.target.className === 'deleteBook'){
-            deleteCard();
+            titleError.innerHTML = '*Please add a title'
+            authorError.innerHTML = '*Please add an author'
+            title.classList.add('input-error')
+            author.classList.add('input-error')
+            return
         }
+        if(title.value == '' || title.value == null){
+            console.log('title check ran')
+
+            titleError.innerHTML = '*Please add a title'
+            title.classList.add('input-error')
+            return
+        }
+        if(author.value =='' || author.value == null){
+            console.log('author check ran')
+
+            authorError.innerHTML = '*Please add an author'
+            author.classList.add('input-error')
+            return
+        }
+        if(title.value !== '' || title.value !== null && title.value !== '' || title.value !== null){
+            console.log('making a book')
+            e.preventDefault();
+            let makeNewBook = new Book(title.value, author.value);
+    
+            return makeNewBook
+        }
+
     })
+
+
+
     
     addBookBtn.addEventListener('click', showBookForm)
     function showBookForm(){
@@ -96,15 +135,21 @@ window.onload = function(){
 
 
 
-
+cardContainer.addEventListener('click', deleteCard)
 
 
     //Helper Functions
     function clearContainer(){
         document.getElementById('wrap').innerHTML = "";
     }
-    function deleteCard(){
-        console.log('delete card func called')
+    function deleteCard(e){
+        
+
+        if (!e.target.classList.contains('deleteBook')){
+            return;
+        }
+        
+
     }
 
 
