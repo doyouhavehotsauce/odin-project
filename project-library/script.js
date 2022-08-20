@@ -1,23 +1,21 @@
 //PUNCH LIST
 //ensure aria compliance on form & cards
 
-//add form validation
+//clean up form validation
 
 //add toggleable feature to read/unread
 
-//if user deletes a book remove it from the array
-    //add confirmation step feature
 
 
 
+
+    //Current focus: getting the checkbox to toggle the read status
 
 
 window.onload = function(){
 
-    let library = [
-        {title: "Rob's Adventure", author: 'Steve Sampson'}
-    ];
-    let btn = document.getElementById('bookSubmit');
+    let library = [];
+    let submitNewBookBtn = document.getElementById('bookSubmit');
     let cardContainer = document.getElementById('wrap');
     let addBookBtn = document.getElementById('add-book');
     let grabWrap = document.querySelector('div.add-book-wrap');
@@ -28,20 +26,26 @@ window.onload = function(){
 
 
 //creates book object
-    function Book(title, author){
+    function Book(title, author, readStatus){
         this.title = title;
         this.author = author;
-        // this.readStatus = readStatus;
+        this.readStatus = false;
         this.addToLibrary = function(){
             library.push(this);
         };
 
 
+        console.log(`new book title is ${this.title} and read status is ${this.readStatus}`)
+
         this.addToLibrary();
+        library.forEach(book => console.log(book))
+            
         
         showBookForm();
         clearContainer();
         showBooks();
+
+        return Book
 
     }
 
@@ -53,15 +57,17 @@ window.onload = function(){
         let i = 0;
         for(book of library) {
             document.getElementById('wrap').innerHTML
-            += `<article class="card" data-id="card${i}">`+
+            += `<article class="card" data-id="${i}">`+
             `<h3>${book.title}</h3>`+
             `<p>author: ${book.author} </p>`+
-            `<p>completed: <input type="checkbox">&nbsp;<span>No</span></p>`+
+            `<p>completed: <input type="checkbox" class="unread" ></p>`+
             `<button class="deleteBook">delete</button>`+
-            `</p>`+
             `</article>`;
 
             i++
+            if(`${book.readStatus}` == true){
+                document.querySelector('checkbox').checked = true
+            }
         }
         
     }
@@ -69,7 +75,7 @@ window.onload = function(){
 
 
     //Event Listners
-    btn.addEventListener('click', (e) => {
+    submitNewBookBtn.addEventListener('click', (e) => {
 
 
         let title = document.getElementById('title');
@@ -110,6 +116,7 @@ window.onload = function(){
             console.log('making a book')
             e.preventDefault();
             let makeNewBook = new Book(title.value, author.value);
+
     
             return makeNewBook
         }
@@ -131,26 +138,50 @@ window.onload = function(){
     }
         
 
+    cardContainer.addEventListener('click', deleteCard)
+    //cardContainer.addEventListener('click', changeCheckbox)
 
 
 
+    // function changeCheckbox(e){
+    //     console.log('change checkbox function was called and started to run')
+    //     let checkbox = e.target 
+    //     console.log(this.Book)
 
-cardContainer.addEventListener('click', deleteCard)
+    //     checkbox.readStatus = true
+    //     return checkbox
+    // }
+
+// cardContainer.addEventListener('click', deleteCard)
 
 
     //Helper Functions
     function clearContainer(){
         document.getElementById('wrap').innerHTML = "";
     }
-    function deleteCard(e){
-        
 
-        if (!e.target.classList.contains('deleteBook')){
-            return;
-        }
-        
+
+
+
+
+
+
+
+    function deleteCard(e){
+
+
+        const libraryPosition = e.target.parentElement.getAttribute('data-id');
+
+        const updateLibrary = library.splice(libraryPosition, 1);
+
+        clearContainer();
+        showBooks();
 
     }
+
+
+
+
 
 
 

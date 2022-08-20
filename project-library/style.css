@@ -146,3 +146,51 @@ form button{
     color: tomato ;
     font-size: 12px;
 }
+input[type="checkbox"]{
+    position: relative;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 2px solid var(--black);
+    border-radius: var(--border-radius);
+    outline: none;
+    top: 4px;
+    transition-duration: 0.3s;
+}
+input[type="checkbox"]:checked{
+    background-color: var(--light-green);
+}
+input[type="checkbox"]:checked:before{
+    content: '';
+    display: block;
+    top: 2px;
+    left: 2px;
+    height: 5px;
+    width: 8px;
+    border-bottom: 2px solid var(--black);
+    border-left: 2px solid var(--black);
+    position: absolute;
+    transform: rotate(-53deg);
+}
+input[type="checkbox"]:checked:after{
+    content: 'Yes';
+    display: block;
+    border-color: var(--light-green);
+    font-size: 1rem;
+    position: absolute;
+    left: 1.5rem;
+    top: -2px;
+    color: var(--dark-green);
+}
+input[type="checkbox"]:after{
+    content: 'No';
+    display: block;
+    font-size: 1rem;
+    position: absolute;
+    left: 1.5rem;
+    top: -2px;
+}
